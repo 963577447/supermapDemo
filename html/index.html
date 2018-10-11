@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地图</title>
+    <link rel="stylesheet" href="../libs/Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../libs/sweetalert/sweetalert.css">
+
+</head>
+<body>
+<div class="main">
+    <div class="rightFunBox">
+        <div class="rightBox">
+            <div  class="Boxtitle"><span>绘制圆形扫描区域</span></div>
+            <div class="chooseRadio">
+                    <label>
+                        <input class="radio" type="radio" name="options" id="dome" value="dome"> 球机
+                    </label>
+                    <label>
+                        <input class="radio"  type="radio" name="options" id="bolt" value="bolt"> 枪机
+                    </label>
+            </div>
+            <div class="firstLine">
+                <label>经度</label>
+                <input type="text" name="lon" class="inputTitude"  placeholder="经度">
+                <label>纬度</label>
+                <input type="text" name ="lat" class="inputTitude"  placeholder="纬度">
+            </div>
+            <div class="firstLine">
+                <label>方位角</label>
+                <input type="text" name ="positionAngle" class="inputTitude" value="0" placeholder="方位角（正东逆时针）">
+                <label>可视距离</label>
+                <input type="text" name="visualDistance" class="inputTitude"  placeholder="可视距离/米">
+            </div>
+            <div class="firstLine">
+                <label>视角范围</label>
+                <input type="text" name="visualAngle" class="inputTitude"  placeholder="视角范围">
+                <label>遮挡区</label>
+                <div class="addCut">
+                    <img id="add" src="../images/加号.png" height="25" width="25"/>
+                    <img id="cut" src="../images/减号.png" height="25" width="25"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="map">
+    </div>
+    </div>
+</div>
+</body>
+<style>
+    body{
+        font: 14px "Century Gothic", Futura, sans-serif;
+        margin:0 auto;
+        color:#000000;
+        width:100%;
+        height:100%;
+        overflow: hidden;
+    }
+    *{
+        margin:0 auto;
+    }
+    .main{
+        width:100%;
+        height:1080px;
+        position: relative;
+    }
+    #map{
+        width:100%;
+        height:100%;
+        margin:0 auto;
+    }
+    .topBox{
+        z-index:10000;
+        width: 550px;
+        height:100px;
+        position: absolute;
+        left: 60px;
+        top:40px;
+    }
+    .Inputbox{
+        width:180px;
+        float: left;
+    }
+    .Inputbox label{
+        display: inline;
+    }
+    .form-control{
+        width:120px;
+    }
+    .firstLine label{
+        display: inline-block;
+        width:80px;
+        text-align:right;
+        margin-right:10px;
+        font-size: 16px;
+    }
+    .radio{
+        margin-left:5px;
+    }
+    .chooseRadio{
+        margin-left:90px;
+    }
+    .chooseRadio label{
+        display: inline-block;
+        width:50px;
+    }
+    .rightFunBox{
+        position: absolute;
+        left:60px;
+        top:15px;
+        width:501px;
+        border: thin solid #959095;
+        -webkit-box-shadow: 0px 0px 10px #5A6A81;
+        box-shadow: 0px 0px 10px #5A6A81;
+        z-index: 10000;
+        background-color: rgba(215,214,212,0.9);
+    }
+    .rightBox{
+        padding:20px;
+    }
+    .Boxtitle{
+        width:100%;
+        height:40px;
+        line-height:34px;
+        text-align:center;
+    }
+    .Boxtitle span{
+        font-size:20px;
+    }
+    .firstLine{
+        width:100%;
+        height:40px;
+    }
+    .inputTitude{
+        width:120px;
+    }
+    .inputLine{
+        width:200px;
+    }
+    .firstLine label{
+        display: inline-block;
+    }
+   .firstLine button{
+       margin-top:10px;
+       margin-right:15px;
+       float:right;
+   }
+    .addCut{
+        display: inline;
+    }
+    .addCut img{
+        cursor: pointer;
+    }
+    .addCut img:nth-of-type(1)
+    {
+        margin-right:10px;
+    }
+
+</style>
+<script src="../libs/Jquery/jquery-3.2.1.min.js"></script>
+<!--supermap导入-->
+<script src="../libs/SuperMap/libs/SuperMap.Include.js"></script>
+<!--bootstrap-->
+<script src="../libs/Bootstrap/bootstrap.min.js"></script>
+<!--弹窗-->
+<script src="../libs/sweetalert/sweetalert.min.js"></script>
+<!--js文件-->
+<script src="../js/index.js"></script>
+</html>
