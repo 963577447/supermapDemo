@@ -3,6 +3,10 @@ $(document).ready(function () {
     let drawPoint,drawLine;
     init();
     console.log("ssssss");
+    console.log("ssssss");
+    console.log("ssssss");
+    console.log("ssssss");
+    console.log("ssssss");
     function init() {
         if (!document.createElement('canvas').getContext) {
             sweetAlert(
