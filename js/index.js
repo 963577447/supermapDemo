@@ -2,7 +2,7 @@ $(document).ready(function () {
     let map, tiandituLayer,tianMarkerLayer,markerlayer,marker,drawPointLayer,vector,visualAngleVector;
     let drawPoint,drawLine;
     init();
-
+    console.log("ssssss");
     function init() {
         if (!document.createElement('canvas').getContext) {
             sweetAlert(
